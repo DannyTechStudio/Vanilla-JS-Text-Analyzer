@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="counter.css">
+    <title>Counter program</title>
+</head>
+
+<body id="body" data-theme="light-mode">
+    <!--Word Counter Program-->
+    <main>
+        <div class="header-container">
+            <h1>Text Analyzer</h1>
+            <div class="toggle-container">
+                <abbr title="Light Mode"><button id="light-mode-btn">🔆</button></abbr>
+                <abbr title="Dark Mode"><button id="dark-mode-btn">🌙</button><abbr>
+            </div>
+        </div>
+        <p class="description">
+            <strong>Text Analyzer</strong> is a simple yet powerful tool that helps you break down any block of text. It provides instant insights
+            including character count, word count, sentence count, the most frequent character, and an estimated reading time —
+            perfect for writers, students, and editors.
+        </p>
+        <textarea id="text-input" placeholder="Enter/Paste text here..." required></textarea>
+        <div class="checkbox-container">
+            <div class="with-space-container">
+                <input type="radio" value="checkbox-with-space" name="options" id="checkbox-with-space">
+                <label for="checkbox-with-space">Count with space</label>
+            </div>
+
+            <div class="without-space-container">
+                <input type="radio" value="checkbox-without-space" name="options" id="checkbox-without-space">
+                <label for="checkbox-without-space">Count without space</label>
+            </div>
+
+            <div class="read-time-container">
+                <label for="read-time-display">Approx. reading time:</label>
+                <div id="reading-time-display">0</div>
+            </div>
+        </div>
+        <span class="modal"></span>
+        <div class="button-container">
+            <input type="button" value="Count" id="counter-btn">
+            <input type="button" value="Reset" id="counter-reset-btn">
+        </div>
+
+        <div class="div-container">
+            <div class="sub-container-one">
+                <span id="total-chars">0</span>
+                <p>Total characters</p>
+            </div>
+            <div class="sub-container-two">
+                <span id="total-words">0</span>
+                <p>Total words</p>
+            </div>
+            <div class="sub-container-three">
+                <span id="total-sentences">0</span>
+                <p>Total Sentences</p>
+            </div>
+            <div class="sub-container-four">
+                <span id="most-freq-char">0</span>
+                <p>Most Frequent Character</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="counter.js"></script>
+</body>
+
+</html>

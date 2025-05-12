@@ -1,0 +1,383 @@
+
+
+/*------------ VARIABLES --------------*/
+
+[data-theme="light-mode"]{
+    --body-bg-color: rgb(255, 255, 255);
+    --text-color: rgba(0, 0, 0, 0.862);
+    --container-bg-color: rgba(233, 228, 228, 0.471);
+    --container-border: 1px solid rgba(190, 188, 188, 0.349);
+    --box-shadow-value: 0 4px 8px rgba(0, 0, 0, 0.119);
+    --read-time-display-color: rgb(17, 0, 255);
+    --input-bg-color: rgba(217, 216, 216, 0.195);
+    --input-text-color: rgba(0, 0, 0, 0.862);
+    --input-border-value: 2px solid rgba(0, 0, 0, 0.627); 
+    --button-border: 2px solid rgba(206, 203, 203, 0.796);
+    --reset-btn-bg-color: rgba(144, 140, 140, 0.327);
+    --reset-btn-text-color: rgba(0, 0, 0, 0.862);
+    --reset-btn-bg-hover-color: rgba(177, 176, 176, 0.407);
+}
+
+[data-theme="dark-mode"]{
+    --body-bg-color: rgb(1, 1, 9);
+    --text-color: rgb(255, 255, 255);
+    --container-bg-color: rgba(147, 143, 143, 0.247);
+    --container-border: 2px solid rgba(190, 188, 188, 0.086);
+    --box-shadow-value: 0 4px 8px rgba(186, 183, 183, 0.26);
+    --read-time-display-color: rgb(0, 251, 255);
+    --input-bg-color: rgba(244, 240, 240, 0.953);
+    --input-text-color: rgba(0, 0, 0, 0.862);
+    --input-border-value: 2px solid rgba(169, 169, 169, 0.474); 
+    --button-border: 2px solid rgba(206, 203, 203, 0.796);
+    --reset-btn-bg-color: rgb(197, 193, 193);
+    --reset-btn-text-color: rgba(0, 0, 0, 0.862);
+    --reset-btn-bg-hover-color: rgba(177, 176, 176, 0.097);
+}
+
+/*------------ Styles --------------*/
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--body-bg-color);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: auto;
+    padding: 10px;
+    align-items: center;
+    background-color: transparent;
+}
+
+.header-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 35px;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow-value);
+    background-color: var(--container-bg-color);
+    margin-bottom: 20px;
+}
+
+h1{
+    font-size: 38px;
+    margin-left: 200px;
+    color: var(--text-color);
+}
+
+#light-mode-btn,
+#dark-mode-btn{
+    font-size: 22px;
+    padding: 5px;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#light-mode-btn:hover,
+#dark-mode-btn:hover{
+    background-color: rgba(177, 174, 174, 0.153);
+}
+
+.description{
+    font-size: 17px;
+    width: 60%;
+    padding: 30px;
+    border: var(--container-border);
+    border-radius: 5px;
+    color: var(--text-color);
+    background-color: var(--container-bg-color);
+    box-shadow: var(--box-shadow-value);
+}
+
+#text-input {
+    min-width: 70%;
+    max-width: 70%;
+    min-height: 150px;
+    padding: 15px;
+    color: var(--input-text-color);
+    border: var(--input-border-value);
+    border-radius: 5px;
+    font-size: 18px;
+    margin-bottom: 2px;
+    margin-top: 20px;
+    background-color: var(--input-bg-color);
+}
+
+#text-input:focus {
+    outline: none;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 75%;
+    padding: 0;
+    margin-top: 10px;
+}
+
+input[type="checkbox"] {
+    margin: 0;
+    padding: 0;
+    margin-right: 0;
+}
+
+label {
+    margin-left: 0;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+#read-time-display{
+    width: 150px;
+    padding: 4px;
+    color: red;
+    font-weight: bold;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background-color: rgb(255, 0, 0);
+    color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(20, 20, 20, 0.278);
+    text-align: center;
+    opacity: 0;
+    transition: all .4s ease;
+    z-index: 9999;
+    display: none;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.modal.active {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    margin-top: 40px;
+}
+
+#counter-btn {
+    margin: 5px;
+    padding: 8px;
+    width: 50%;
+    height: 50px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    background-color: rgb(251, 153, 6);
+    color: var(--text-color);
+    transition: all 0.5s ease;
+}
+
+#counter-btn:hover {
+    color: white;
+    cursor: pointer;
+    background-color: rgb(2, 16, 59);
+}
+
+#counter-reset-btn {
+    margin: 5px;
+    padding: 8px;
+    width: 40%;
+    height: 50px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border: var(--button-border);
+    border-radius: 50px;
+    background-color: var(--reset-bg-color);
+    color: var(--text-color);
+    transition: all 0.5s ease;
+}
+
+#counter-reset-btn:hover {
+    cursor: pointer;
+    background-color: var(--reset-btn-bg-hover-color);
+}
+
+.div-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    width: 70%;
+    height: auto;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 3px;
+}
+
+.div-container div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 80px;
+    padding: 5px;
+    margin: 5px;
+    border: var(--container-border);
+    border-radius: 5px;
+    box-shadow: var(--box-shadow-value);
+    background-color: var(--container-bg-color);
+}
+
+.read-time-container{
+    display: flex;
+    align-items: center;
+}
+
+#reading-time-display{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    width: 80px;
+    height: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    color: var(--read-time-display-color);
+    background-color: rgba(151, 151, 151, 0.159);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+span{
+    color: var(--text-color);
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.sub-container-one p,
+.sub-container-two p,
+.sub-container-three p,
+.sub-container-four p{
+    padding: 0;
+    color: var(--text-color);
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+/*------------------RESPONSIVENESS-------------------*/
+@media (max-width: 768px) {
+    main{
+        width: 90%;
+    }
+
+    .header-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 20px;
+        padding: 6px;
+        margin-bottom: 10px;
+    }
+    
+    h1{
+        font-size: 28px;
+        margin-left: 15px;
+    }
+
+    .toggle-container{
+        display: flex;
+    }
+
+    #light-mode-btn,
+    #dark-mode-btn{
+        font-size: 18px;
+        padding: 3px;
+    }
+
+    .description{
+        width: 104%;
+        font: 14px;
+        padding: 10px;
+        margin-bottom: 0;
+    }
+
+    #text-input{
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 80px;
+        font-size: 14px;
+    }
+
+    .checkbox-container{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 110%;
+    }
+
+    .read-time-container{
+        margin-left: 8px;
+    }
+
+    label,
+    .sub-container-one p,
+    .sub-container-two p,
+    .sub-container-three p,
+    .sub-container-four p{
+        font-size: 14px;
+    }
+
+    .button-container{
+        display: flex;
+        flex-direction: column;
+        width: 110%;
+        margin-top: 20px;
+    }
+
+    #counter-btn{
+        width: 100%;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    #counter-reset-btn{
+        width: 100%;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .div-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 105%;
+    }
+    
+    .div-container div{
+        width: 100%;
+    }
+
+    #reading-time-display{
+        font-size: 14px;
+        width: 60px;
+    }
+
+    span{
+        font-size: 36px;
+    }
+}
