@@ -16,7 +16,7 @@ The interface adapts to different screen sizes, ensuring seamless usability on s
 
 ##  Live Demo
 
-(Include a link here if you plan to deploy it with GitHub Pages, Netlify, or any other platform)
+Visit site: https://dannytechstudio.github.io/Vanilla-JS-Text-Analyzer/
 
 ## Technologies Used
 
@@ -27,9 +27,9 @@ The interface adapts to different screen sizes, ensuring seamless usability on s
 ##  Screenshot
 ![Screenshot 2025-05-12 015554](https://github.com/user-attachments/assets/c089566c-a9cd-458c-b01d-d6829f0ac2ef)
 ![Screenshot 2025-05-12 015610](https://github.com/user-attachments/assets/5d97b3eb-2374-436f-9bfa-0cc4c4edbd00)
-![Screenshot 2025-05-12 015658](https://github.com/user-attachments/assets/ae5b6137-764e-4221-80f6-9f82c24f2aad)
+![Screenshot 2025-05-12 022124](https://github.com/user-attachments/assets/05ccf453-a8bf-4cc3-bc8e-276a077f0fc2)
+![Screenshot 2025-05-12 022054](https://github.com/user-attachments/assets/8cbdae1a-06d3-4378-b05b-4291376f2366)
 
-(You can add a screenshot of your app interface here)
 
 ##  How to Use
 
