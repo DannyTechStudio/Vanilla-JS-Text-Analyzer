@@ -5,6 +5,7 @@
 [data-theme="light-mode"]{
     --body-bg-color: rgb(255, 255, 255);
     --text-color: rgba(0, 0, 0, 0.862);
+    --tech-color: rgb(13, 13, 118);
     --container-bg-color: rgba(233, 228, 228, 0.471);
     --container-border: 1px solid rgba(190, 188, 188, 0.349);
     --box-shadow-value: 0 4px 8px rgba(0, 0, 0, 0.119);
@@ -21,6 +22,7 @@
 [data-theme="dark-mode"]{
     --body-bg-color: rgb(1, 1, 9);
     --text-color: rgb(255, 255, 255);
+    --tech-color: rgb(0, 253, 228);
     --container-bg-color: rgba(147, 143, 143, 0.247);
     --container-border: 2px solid rgba(190, 188, 188, 0.086);
     --box-shadow-value: 0 4px 8px rgba(186, 183, 183, 0.26);
@@ -41,6 +43,7 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: var(--body-bg-color);
+    transition: all .3s ease-in-out;
 }
 
 main{
@@ -65,10 +68,24 @@ main{
     background-color: var(--container-bg-color);
     margin-bottom: 20px;
 }
+.logo-container {
+    margin-left: 10px;
+}
+
+.logo-container p {
+    font-size: 28px;
+    color: var(--tech-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.logo-container small {
+    font-size: 27px;
+    color: #ff00f2;
+}
 
 h1{
     font-size: 38px;
-    margin-left: 200px;
     color: var(--text-color);
 }
 
@@ -92,7 +109,8 @@ h1{
     width: 60%;
     padding: 30px;
     border: var(--container-border);
-    border-radius: 5px;
+    border-left: 10px solid #ff00f2;
+    border-radius: 5px 10px 10px 5px;
     color: var(--text-color);
     background-color: var(--container-bg-color);
     box-shadow: var(--box-shadow-value);
@@ -185,15 +203,15 @@ label {
     font-weight: bold;
     border: none;
     border-radius: 50px;
-    background-color: rgb(251, 153, 6);
-    color: var(--text-color);
+    background-color:#ff00f2;
+    color: white;
     transition: all 0.5s ease;
 }
 
 #counter-btn:hover {
     color: white;
     cursor: pointer;
-    background-color: rgb(2, 16, 59);
+    background-color: rgb(251, 153, 6);
 }
 
 #counter-reset-btn {
@@ -294,17 +312,30 @@ span{
     }
     
     h1{
-        font-size: 28px;
-        margin-left: 15px;
+        font-size: 20px;
+    }
+
+    .logo-container {
+        margin-left: 0;
+    }
+        
+    .logo-container p {
+        font-size: 16px;
+    }
+
+    .logo-container small {
+        font-size: 16px;
     }
 
     .toggle-container{
         display: flex;
+        width: 55px;
+        margin-right: 0;
     }
 
     #light-mode-btn,
     #dark-mode-btn{
-        font-size: 18px;
+        font-size: 16px;
         padding: 3px;
     }
 
