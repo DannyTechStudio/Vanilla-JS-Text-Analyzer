@@ -39,6 +39,7 @@
 /*------------ Styles --------------*/
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -54,66 +55,6 @@ main{
     padding: 10px;
     align-items: center;
     background-color: transparent;
-}
-
-.header-container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 35px;
-    padding: 8px;
-    border-radius: 5px;
-    box-shadow: var(--box-shadow-value);
-    background-color: var(--container-bg-color);
-    margin-bottom: 20px;
-}
-.logo-container {
-    margin-left: 10px;
-}
-
-.logo-container p {
-    font-size: 28px;
-    color: var(--tech-color);
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-}
-
-.logo-container small {
-    font-size: 27px;
-    color: #ff00f2;
-}
-
-h1{
-    font-size: 38px;
-    color: var(--text-color);
-}
-
-#light-mode-btn,
-#dark-mode-btn{
-    font-size: 22px;
-    padding: 5px;
-    border: none;
-    border-radius: 50%;
-    background-color: transparent;
-    cursor: pointer;
-}
-
-#light-mode-btn:hover,
-#dark-mode-btn:hover{
-    background-color: rgba(177, 174, 174, 0.153);
-}
-
-.description{
-    font-size: 17px;
-    width: 60%;
-    padding: 30px;
-    border: var(--container-border);
-    border-left: 10px solid #ff00f2;
-    border-radius: 5px 10px 10px 5px;
-    color: var(--text-color);
-    background-color: var(--container-bg-color);
-    box-shadow: var(--box-shadow-value);
 }
 
 #text-input {

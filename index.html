@@ -9,23 +9,17 @@
 </head>
 
 <body id="body" data-theme="light-mode">
-    <!--Word Counter Program-->
-    <main>
-        <div class="header-container">
-            <div class="logo-container">
-                <p class="logo">Tech<small>studio</small></p>
-            </div>
-            <h1>Text Analyzer</h1>
-            <div class="toggle-container">
-                <abbr title="Light Mode"><button id="light-mode-btn">🔆</button></abbr>
-                <abbr title="Dark Mode"><button id="dark-mode-btn">🌙</button><abbr>
-            </div>
+    <nav>
+        <div class="logo-container">
+            <img src="Counter logo.png" alt="Counter logo">
+            <h1>Character Counter</h1>
         </div>
-        <p class="description">
-            <strong>Text Analyzer</strong> is a simple yet powerful tool that helps you break down any block of text. It provides instant insights
-            including character count, word count, sentence count, the most frequent character, and an estimated reading time —
-            perfect for writers, students, and editors.
-        </p>
+        <div id="theme-toggle-wrapper">
+            <div class="path"></div>
+        </div>
+    </nav>
+    <main>
+        <h1>Analyze your text in real-time.</h1>
         <textarea id="text-input" placeholder="Enter/Paste text here..." required></textarea>
         <div class="checkbox-container">
             <div class="with-space-container">
