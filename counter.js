@@ -2,8 +2,7 @@
 /*--------------------- CONSTANTS -----------------------------*/
 
 const body = document.getElementById("body");
-const lightModeBtn = document.getElementById("light-mode-btn");
-const darkModeBtn = document.getElementById("dark-mode-btn");
+const themeToggle = document.getElementById('theme-toggle-wrapper');
 const checkBoxWithSpace = document.getElementById("checkbox-with-space");
 const checkBoxWithoutSpace = document.getElementById("checkbox-without-space");
 const readTimeDisplay = document.getElementById("reading-time-display")
@@ -16,14 +15,22 @@ const totalWords = document.getElementById("total-words");
 const totalSentences = document.getElementById("total-sentences");
 const mostFreqChar = document.getElementById("most-freq-char");
 
-/*--------------------- Function to apply dark mode -----------------------------*/
-darkModeBtn.addEventListener('click', () => {
-    body.setAttribute('data-theme', 'dark-mode');
-});
+/*---------------------- Theme Toggle Functionality ----------------------*/
+const theme = localStorage.getItem('theme') || 'light-mode';
+document.body.setAttribute('data-theme', theme);
 
-/*--------------------- Function to apply light mode -----------------------------*/
-lightModeBtn.addEventListener('click', () => {
-    body.setAttribute('data-theme', 'light-mode');
+if(theme === 'dark-mode'){
+    themeToggle.classList.add('active');
+}
+
+themeToggle.addEventListener('click', () => {
+    themeToggle.classList.toggle('active');
+
+    const currentTheme = document.body.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark-mode' ? 'light-mode' : 'dark-mode';
+
+    document.body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
 });
 
 /*--------------------- Function to display approximate reading time -----------------------------*/
