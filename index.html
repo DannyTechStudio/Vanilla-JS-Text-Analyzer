@@ -19,16 +19,18 @@
         </div>
     </nav>
     <main>
-        <h1>Analyze your text in real-time.</h1>
+        <div class="title-container">
+            <h1>Analyze your text in real-time.</h1>
+        </div>
         <textarea id="text-input" placeholder="Enter/Paste text here..." required></textarea>
         <div class="checkbox-container">
             <div class="with-space-container">
-                <input type="radio" value="checkbox-with-space" name="options" id="checkbox-with-space" checked>
+                <input type="checkbox" value="checkbox-with-space" name="options" id="checkbox-with-space" checked>
                 <label for="checkbox-with-space">Count with space</label>
             </div>
 
             <div class="without-space-container">
-                <input type="radio" value="checkbox-without-space" name="options" id="checkbox-without-space">
+                <input type="checkbox" value="checkbox-without-space" name="options" id="checkbox-without-space">
                 <label for="checkbox-without-space">Count without space</label>
             </div>
 
@@ -44,19 +46,19 @@
         </div>
 
         <div class="div-container">
-            <div class="sub-container-one">
+            <div class="sub-container">
                 <span id="total-chars">0</span>
                 <p>Total characters</p>
             </div>
-            <div class="sub-container-two">
+            <div class="sub-container">
                 <span id="total-words">0</span>
                 <p>Total words</p>
             </div>
-            <div class="sub-container-three">
+            <div class="sub-container">
                 <span id="total-sentences">0</span>
                 <p>Total Sentences</p>
             </div>
-            <div class="sub-container-four">
+            <div class="sub-container">
                 <span id="most-freq-char">0</span>
                 <p>Most Frequent Character</p>
             </div>
