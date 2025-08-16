@@ -4,42 +4,31 @@
 
 [data-theme="light-mode"] {
     --body-bg-color: rgb(255, 255, 255);
-    --navbar-box-shadow: rgba(0, 0, 0, 0.152);
+    --box-shadow: rgba(0, 0, 0, 0.152);
     --text-color: rgba(0, 0, 0, 0.93);
     --faded-text-color: rgb(116, 112, 130);
     --toggle-bg-color: rgba(204, 204, 204, 0.314);
     --all-border-color: rgba(0, 0, 0, 0.136);
     --container-bg-color: rgba(233, 228, 228, 0.471);
-    --container-border: 1px solid rgba(190, 188, 188, 0.349);
-    --box-shadow-value: 0 4px 8px rgba(0, 0, 0, 0.119);
     --read-time-display-color: rgb(17, 0, 255);
     --input-bg-color: rgba(6, 101, 218, 0.053);
     --input-text-color: rgba(0, 0, 0, 0.862);
-    --input-border-value: 1px solid rgba(0, 0, 0, 0.627); 
-    --button-border: 1px solid rgba(206, 203, 203, 0.796);
     --reset-btn-bg-color: rgba(144, 140, 140, 0.327);
-    --reset-btn-text-color: rgba(0, 0, 0, 0.862);
     --reset-btn-bg-hover-color: rgba(177, 176, 176, 0.407);
 }
 
 [data-theme="dark-mode"] {
     --body-bg-color: rgb(2, 2, 18);
-    --navbar-box-shadow: rgba(234, 225, 225, 0.136);
-    --text-color: rgba(255, 255, 255, 0.925);
+    --box-shadow: rgba(234, 225, 225, 0.163);
+    --text-color: rgba(255, 255, 255, 0.955);
     --faded-text-color: rgb(149, 149, 158);
     --toggle-bg-color: rgba(204, 204, 204, 0.105);
     --all-border-color: rgba(201, 198, 198, 0.227);
-    --container-bg-color: rgba(147, 143, 143, 0.247);
-    --container-border: rgba(190, 188, 188, 0.086);
-    --box-shadow-value: 0 4px 8px rgba(186, 183, 183, 0.26);
     --read-time-display-color: rgb(0, 251, 255);
     --input-bg-color: rgb(18, 18, 42);
-    --input-text-color: rgba(255, 255, 255, 0.704);
-    --input-border-color: rgba(11, 11, 11, 0.87); 
-    --button-border: rgba(206, 203, 203, 0.796);
-    --reset-btn-bg-color: rgb(197, 193, 193);
-    --reset-btn-text-color: rgba(0, 0, 0, 0.862);
-    --reset-btn-bg-hover-color: rgba(177, 176, 176, 0.097);
+    --input-text-color: rgb(255, 255, 255);
+    --reset-btn-bg-color: rgba(206, 203, 203, 0.068);
+    --reset-btn-bg-hover-color: rgba(177, 176, 176, 0.204);
 }
 
 /*------------ Styles --------------*/
@@ -55,13 +44,18 @@ body {
 }
 
 nav {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: var(--body-bg-color);
-    box-shadow: 0 4px 6px var(--navbar-box-shadow);
+    border: 2px solid var(--all-border-color);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px var(--box-shadow);
 }
 
 .logo-container {
@@ -119,10 +113,9 @@ main {
     padding: 10px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    /* justify-content: flex-start; */
+    align-items: center;
+    gap: 10px;
     background-color: transparent;
-    border: 1px solid white;
 }
 
 .title-container{
@@ -134,21 +127,21 @@ main {
 
 h1 {
     color: var(--text-color);
-    width: 60%;
-    font-size: 4rem;
+    width: 70%;
+    font-size: 5rem;
     margin-bottom: 0;
-    margin-top: 10px;
+    margin-top: 80px;
 }
 
 #text-input {
-    min-width: 60%;
-    max-width: 60%;
-    min-height: 150px;
-    max-height: 150px;
-    overflow: hidden;
+    min-width: 80%;
+    max-width: 80%;
+    min-height: 200px;
+    max-height: 200px;
+    overflow: auto;
     padding: 15px;
     color: var(--input-text-color);
-    border: 2px solid var(--all-border-color);
+    border: 1px solid var(--all-border-color);
     outline: none;
     border-radius: 10px;
     font-size: 18px;
@@ -161,19 +154,24 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 75%;
+    width: 83%;
     padding: 0;
     margin-top: 10px;
 }
 
 #checkbox-with-space,
 #checkbox-without-space {
-    width: 14px;
-    height: 14px;
+    width: 15px;
+    height: 15px;
     margin: 0;
     padding: 30px;
     font-size: 40px;
     margin-right: 0;
+    cursor: pointer;
+}
+.with-space-container label,
+.without-space-container label{
+    cursor: pointer;
 }
 
 label {
@@ -201,7 +199,7 @@ label {
     box-shadow: 0 10px 25px rgba(20, 20, 20, 0.278);
     text-align: center;
     opacity: 0;
-    transition: all .4s ease;
+    transition: all 0.3s ease-in-out;
     z-index: 9999;
     display: none;
     padding: 20px;
@@ -216,23 +214,20 @@ label {
 .button-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 40%;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 85%;
     margin-top: 40px;
-    margin-right: 310px;
 }
 
 #counter-btn {
-    margin: 5px;
-    padding: 8px;
-    width: 50%;
-    height: 50px;
-    padding: 10px;
-    font-size: 18px;
+    width: 30%;
+    padding: 18px;
+    font-size: 1.5rem;
     font-weight: bold;
     border: none;
     border-radius: 50px;
-    background-color:#ff00f2;
+    background-color:#0066ff;
     color: white;
     transition: all 0.5s ease;
 }
@@ -244,16 +239,13 @@ label {
 }
 
 #counter-reset-btn {
-    margin: 5px;
-    padding: 8px;
-    width: 40%;
-    height: 50px;
-    padding: 10px;
-    font-size: 18px;
+    width: 25%;
+    padding: 18px;
+    font-size: 1.5rem;
     font-weight: bold;
-    border: 2px solid var(--all-border-color);
+    border: 1px solid var(--all-border-color);
     border-radius: 50px;
-    background-color: var(--reset-bg-color);
+    background-color: var(--reset-btn-bg-color);
     color: var(--text-color);
     transition: all 0.5s ease;
     cursor: pointer;
@@ -261,34 +253,6 @@ label {
 
 #counter-reset-btn:hover {
     background-color: var(--reset-btn-bg-hover-color);
-}
-
-.div-container {
-    /* display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr); */
-    display: flex;
-    gap: 20px;
-    width: 100%;
-    height: auto;
-    padding: 10px;
-    margin-top: 20px;
-    border-radius: 3px;
-}
-
-.div-container div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    width: 10rem;
-    height: 10rem;
-    padding: 10px;
-    margin: 5px;
-    border: var(--container-border);
-    border-radius: 5px;
-    box-shadow: var(--box-shadow-value);
-    background-color: var(--container-bg-color);
 }
 
 .read-time-container {
@@ -310,67 +274,167 @@ label {
     margin-right: 5px;
 }
 
+.div-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin-top: 40px;
+    border-radius: 3px;
+}
+
+.sub-div-1,
+.sub-div-2,
+.sub-div-3,
+.sub-div-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 12rem;
+    height: 8rem;
+    padding: 10px;
+    margin: 5px;
+    border: var(--container-border);
+    border-radius: 5px;
+    box-shadow: 2px 4px 8px var(--box-shadow);
+}
+
+.sub-div-1{
+    background-image: linear-gradient(45deg, #ffe53b49, #ff252546);
+    background-size: 80px 80px;
+}
+
+.sub-div-2{
+    background-image: linear-gradient(0deg, #3bffba49, #25f0ff20);
+    background-size: 50px 50px;
+}
+
+.sub-div-3{
+    background-image: linear-gradient(to right, #ffae0030, #ffbf004c);
+    background-size: 60px 60px;
+}
+
+.sub-div-4{
+    background-image: linear-gradient(to right, #00ffe530, #03020025);
+    background-size: 60px 60px;
+}
+
+.sub-div-4 div{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 80%;
+    height: auto;
+    margin-bottom: 0;
+}
+
 span {
-    font-size: 4rem;
+    font-size: 3rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: var(--text-color);
 }
 
-.sub-container p {
+.div-container div p {
     font-size: 1.2rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: var(--faded-text-color);
 }
 
-/*------------------RESPONSIVENESS-------------------*/
+/*------------------------------------------------
+
+                RESPONSIVENES
+
+--------------------------------------------------*/
 @media (max-width: 768px) {
+    nav{
+        margin-top: 0;
+    }
+
+    .logo-container {
+        width: 45%;
+    }
+
+    .logo-container h2 {
+        font-size: 1.2rem;
+    }
+    
+    #theme-toggle-wrapper {
+        width: 45px;
+        height: 25px;
+    }
+    
+    .path {
+        width: 20px;
+        height: 20px;
+    }
+    
+    #theme-toggle-wrapper.active .path {
+        transform: translateX(20px);
+    }
+    
     main {
         width: 90%;
+    }
+
+    h1 {
+        width: 100%;
+        font-size: 2.5rem;
     }
 
     #text-input {
         min-width: 100%;
         max-width: 100%;
-        min-height: 80px;
-        font-size: 14px;
+        min-height: 150px;
+        max-height: 150px;
+        overflow: auto;
+        font-size: 16px;
+    }
+
+    .modal{
+        width: 60%;
     }
 
     .checkbox-container {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        justify-content: center;
+        gap: 10px;
         width: 110%;
     }
 
     .read-time-container {
-        margin-left: 8px;
+        width: 100%;
     }
 
     label,
-    .sub-container-one p,
-    .sub-container-two p,
-    .sub-container-three p,
-    .sub-container-four p {
+    .sub-div-1 p,
+    .sub-div-2 p,
+    .sub-div-3  p,
+    .sub-div-4 p {
         font-size: 14px;
     }
 
     .button-container {
         display: flex;
-        flex-direction: column;
         width: 110%;
         margin-top: 20px;
     }
 
     #counter-btn {
-        width: 100%;
-        height: 40px;
-        font-size: 16px;
+        width: 50%;
+        font-size: 1.2rem;
+        padding: 15px;
     }
-
+    
     #counter-reset-btn {
-        width: 100%;
-        height: 40px;
-        font-size: 16px;
+        width: 40%;
+        font-size: 1.2rem;
+        padding: 15px;
     }
 
     .div-container {
@@ -387,10 +451,14 @@ span {
 
     #reading-time-display {
         font-size: 14px;
-        width: 60px;
+        width: auto;
     }
 
     span {
-        font-size: 36px;
+        font-size: 3rem;
+    }
+
+    .sub-div-4 div{
+        width: auto;
     }
 }

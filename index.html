@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,7 @@
     <title>Counter program</title>
 </head>
 
-<body id="body" data-theme="light-mode">
+<body data-theme="light-mode">
     <nav>
         <div class="logo-container">
             <img src="Counter logo.png" alt="Counter logo">
@@ -25,12 +24,12 @@
         <textarea id="text-input" placeholder="Enter/Paste text here..." required></textarea>
         <div class="checkbox-container">
             <div class="with-space-container">
-                <input type="checkbox" value="checkbox-with-space" name="options" id="checkbox-with-space" checked>
+                <input type="radio" value="checkbox-with-space" name="options" id="checkbox-with-space" checked>
                 <label for="checkbox-with-space">Count with space</label>
             </div>
 
             <div class="without-space-container">
-                <input type="checkbox" value="checkbox-without-space" name="options" id="checkbox-without-space">
+                <input type="radio" value="checkbox-without-space" name="options" id="checkbox-without-space">
                 <label for="checkbox-without-space">Count without space</label>
             </div>
 
@@ -46,20 +45,23 @@
         </div>
 
         <div class="div-container">
-            <div class="sub-container">
+            <div class="sub-div-1">
                 <span id="total-chars">0</span>
                 <p>Total characters</p>
             </div>
-            <div class="sub-container">
+            <div class="sub-div-2">
                 <span id="total-words">0</span>
                 <p>Total words</p>
             </div>
-            <div class="sub-container">
+            <div class="sub-div-3">
                 <span id="total-sentences">0</span>
                 <p>Total Sentences</p>
             </div>
-            <div class="sub-container">
-                <span id="most-freq-char">0</span>
+            <div class="sub-div-4">
+                <div>
+                    <span id="most-freq-char">0</span>
+                    <p id="count"></p>
+                </div>
                 <p>Most Frequent Character</p>
             </div>
         </div>

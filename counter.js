@@ -1,7 +1,6 @@
 
 /*--------------------- CONSTANTS -----------------------------*/
 
-const body = document.getElementById("body");
 const themeToggle = document.getElementById('theme-toggle-wrapper');
 const checkBoxWithSpace = document.getElementById("checkbox-with-space");
 const checkBoxWithoutSpace = document.getElementById("checkbox-without-space");
@@ -14,6 +13,7 @@ const totalChars = document.getElementById("total-chars");
 const totalWords = document.getElementById("total-words");
 const totalSentences = document.getElementById("total-sentences");
 const mostFreqChar = document.getElementById("most-freq-char");
+const appearanceCount = document.getElementById("count");
 
 /*---------------------- Theme Toggle Functionality ----------------------*/
 const theme = localStorage.getItem('theme') || 'light-mode';
@@ -87,7 +87,7 @@ counterBtn.addEventListener("click", () => {
         totalChars.textContent = textInput.value.length;
     }
     else if (checkBoxWithoutSpace.checked) {
-        checkBoxWithSpace.ckecked = false;
+        checkBoxWithSpace.checked = false;
         totalChars.textContent = textInput.value.replace(/\s/g, "").length;
     }
     else {
@@ -113,8 +113,8 @@ counterBtn.addEventListener("click", () => {
         }
     }
 
-    mostFreqChar.textContent = maxChar ? `'${maxChar}' (${maxCount} times)` : "N/A";
-    maxCount.style.fontSize = '8px';
+    mostFreqChar.textContent = maxChar ? `${maxChar}` : "N/A";
+    appearanceCount.textContent = `${maxCount} times`;
 });
 
 /*--------------------- Reset the counter -----------------------------*/
