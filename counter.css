@@ -221,9 +221,9 @@ label {
 }
 
 #counter-btn {
-    width: 30%;
-    padding: 18px;
-    font-size: 1.5rem;
+    width: 25%;
+    padding: 15px;
+    font-size: 1.2rem;
     font-weight: bold;
     border: none;
     border-radius: 50px;
@@ -239,9 +239,9 @@ label {
 }
 
 #counter-reset-btn {
-    width: 25%;
-    padding: 18px;
-    font-size: 1.5rem;
+    width: 20%;
+    padding: 15px;
+    font-size: 1.2rem;
     font-weight: bold;
     border: 1px solid var(--all-border-color);
     border-radius: 50px;
