@@ -202,7 +202,7 @@ label {
     transition: all 0.3s ease-in-out;
     z-index: 9999;
     display: none;
-    padding: 20px;
+    padding: 30px;
     font-size: 18px;
 }
 

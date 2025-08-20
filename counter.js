@@ -69,7 +69,7 @@ function showModal(message) {
 /*--------------------- Click event for the Counter button -------------------*/
 counterBtn.addEventListener("click", () => {
     if (textInput.value === "") {
-        showModal("Please enter/paste text")
+        showModal("Please enter text")
 
         totalChars.innerText = "0";
         totalWords.innerText = "0";
