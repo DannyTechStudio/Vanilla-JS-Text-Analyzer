@@ -13,7 +13,7 @@
     --read-time-display-color: rgb(17, 0, 255);
     --input-bg-color: rgba(6, 101, 218, 0.053);
     --input-text-color: rgba(0, 0, 0, 0.862);
-    --reset-btn-bg-color: rgba(144, 140, 140, 0.327);
+    --reset-btn-bg-color: rgba(144, 140, 140, 0.11);
     --reset-btn-bg-hover-color: rgba(177, 176, 176, 0.407);
 }
 
@@ -229,7 +229,7 @@ label {
     border-radius: 50px;
     background-color:#0066ff;
     color: white;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease-in-out;
 }
 
 #counter-btn:hover {
