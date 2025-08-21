@@ -25,11 +25,10 @@ Visit site: https://dannytechstudio.github.io/Vanilla-JS-Text-Analyzer/
 - JavaScript (Vanilla JS)
 
 ##  Screenshot
-![Screenshot 2025-05-12 015554](https://github.com/user-attachments/assets/c089566c-a9cd-458c-b01d-d6829f0ac2ef)
-![Screenshot 2025-05-12 015610](https://github.com/user-attachments/assets/5d97b3eb-2374-436f-9bfa-0cc4c4edbd00)
-![Screenshot 2025-05-12 022124](https://github.com/user-attachments/assets/05ccf453-a8bf-4cc3-bc8e-276a077f0fc2)
-![Screenshot 2025-05-12 022054](https://github.com/user-attachments/assets/8cbdae1a-06d3-4378-b05b-4291376f2366)
-
+<img width="1920" height="1155" alt="Character Counter desktop light theme" src="https://github.com/user-attachments/assets/e7374a63-d516-4bab-ada2-0224e07ff85e" />
+<img width="1920" height="1155" alt="Character Counter desktop dark theme" src="https://github.com/user-attachments/assets/bc4b06e9-af0d-4a34-a943-d56ad7bfad78" />
+<img width="379" height="805" alt="Character Counter mobile light theme" src="https://github.com/user-attachments/assets/570f9f85-7d10-4e6d-a10a-630036d245df" />
+<img width="379" height="806" alt="Character Counter mobile dark theme" src="https://github.com/user-attachments/assets/662bfc8b-eba4-4f54-8a42-c0db9e34a146" />
 
 ##  How to Use
 
