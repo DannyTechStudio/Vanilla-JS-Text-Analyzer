@@ -121,12 +121,13 @@ counterBtn.addEventListener("click", () => {
 counterResetBtn.addEventListener("click", () => {
     readTimeDisplay.innerText = "0";
     textInput.value = "";
-    checkBoxWithSpace.checked = false;
+    checkBoxWithSpace.checked = true;
     checkBoxWithoutSpace.checked = false;
     totalChars.textContent = "0";
     totalWords.textContent = "0";
     totalSentences.textContent = "0";
     mostFreqChar.textContent = "0";
+    appearanceCount.style.display = "none";
     if (modalAlert) modalAlert.style.display = "none";
 });
 
